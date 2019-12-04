@@ -2,7 +2,7 @@
   "miniprogramRoot": "./dist",
   "projectname": "carryu",
   "description": "A super project of Boss Lee",
-  "appid": "touristappid",
+  "appid": "wx8ed2ed96d1c5323d",
   "setting": {
     "urlCheck": true,
     "es6": false,

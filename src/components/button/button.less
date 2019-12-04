@@ -1,0 +1,54 @@
+@import "../styles/color.less";
+.cu-btn {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  border-radius: 5px;
+  &::after {
+    content: "";
+    display: block;
+    left: 0;
+    top: 0;
+    position: absolute;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, #666 10%, transparent 10%);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform 0.3s, opacity 0.5s;
+  }
+  &::after:active {
+    pointer-events: none;
+    transform: scale(0, 0);
+    opacity: 0.3;
+    transition: 0s;
+  }
+  &.default {
+    background: @color-default;
+    color: @color-black;
+  }
+  &.primary {
+    background: @color-primary;
+    color: @color-white;
+  }
+  &.large {
+    width: 650px;
+    height: 90px;
+    line-height: 90px;
+    font-size: 34px;
+  }
+  &.inline {
+    height: 90px;
+    line-height: 90px;
+    font-size: 34px;
+  }
+  &.small {
+    width: 300px;
+    height: 70px;
+    line-height: 70px;
+    font-size: 32px
+  }
+}

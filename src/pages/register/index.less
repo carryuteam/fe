@@ -1,0 +1,38 @@
+@import "../../components/styles/color.less";
+.register {
+  padding: 0 70px;
+  .logo {
+    padding: 22px 0 52px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .label {
+      margin-top: 35px;
+      color: @color-text-gray;
+      flex: 0 0 auto;
+    }
+    .img {
+      flex: 0 0 auto;
+      width: 200px;
+      height: 200px;
+    }
+  }
+  .form {
+    .item {
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+      .form-label {
+        flex: 0 0 76px;
+      }
+      .form-input {
+        flex: 1 1 auto;
+        padding: 20px;
+        color: @color-text-black;
+        margin-left: 32px;
+        height: 40px;
+        border: 1px solid @color-gray;
+      }
+    }
+  }
+}
