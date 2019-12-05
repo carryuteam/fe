@@ -52,7 +52,7 @@ class Login extends Component {
               key: "jwt",
               data: token
             })
-            Taro.redirectTo({ url: "/home" })
+            Taro.redirectTo({ url: "/pages/home/index" })
           }
         }).catch(() => {
           Taro.hideLoading()
