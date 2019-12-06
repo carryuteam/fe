@@ -35,6 +35,7 @@ class App extends Component {
       "pages/home/index",
       "pages/login/index",
       "pages/register/index",
+      "pages/detail/index",
       "pages/index/index"
     ],
     window: {
