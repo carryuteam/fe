@@ -52,7 +52,7 @@ const sortByRange: { value: SortByRange; label: string }[] = [
 ];
 
 @connect(
-  ({}) => ({}),
+  ({ }) => ({}),
   dispatch => ({})
 )
 class Home extends Component {
@@ -116,13 +116,21 @@ class Home extends Component {
                 this.getList
               )
             }
-            onFilterClick={() => {}}
+            onFilterClick={() => { }}
           />
         </View>
         <View style={{ padding: "15px" }}>
           {list.map(item => {
             return (
-              <View style={{ marginBottom: "7px" }} key={item.resid}>
+              <View
+                style={{ marginBottom: "7px" }}
+                key={item.resid}
+                onClick={() => {
+                  Taro.navigateTo({
+                    url: `/pages/detail/index?id=${item.resid}`
+                  })
+                }}
+              >
                 <Card
                   title={item.name}
                   score={item.score.toFixed(1)}
