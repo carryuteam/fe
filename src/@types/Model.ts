@@ -23,6 +23,6 @@ interface SagaCommond {
 }
 
 interface effects {
-  [type: string]: (action, command: SagaCommond) => void
+  [type: string]: (action, command: SagaCommond) => Generator
 }
 

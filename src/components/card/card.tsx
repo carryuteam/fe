@@ -5,7 +5,7 @@ import "./card.less";
 
 type Props = {
   title: string,
-  score: number,
+  score: string,
   tags?: string[],
   time: string,
   price: number,

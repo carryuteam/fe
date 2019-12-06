@@ -31,16 +31,17 @@ class Sorter extends Component<Props> {
 
   render() {
     const { range, value, onSortClick, onFilterClick } = this.props
-    
+    console.log(range)
     return (
       <View className='sorter'>
         <View className="select">
-          {range.map(item => {
+          {range.map((item) => {
             const cls = ClassNames("select-item", {
               selected: item.value === value
             })
             return (
               <View 
+                key={item.value}
                 data-value={item.value}
                 className={cls}
                 onClick={e => this.change(e.currentTarget.dataset.value)}
