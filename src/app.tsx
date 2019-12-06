@@ -1,20 +1,20 @@
-import '@tarojs/async-await'
-import Taro, { Component, Config } from '@tarojs/taro'
-import { Provider } from '@tarojs/redux'
+import "@tarojs/async-await";
+import Taro, { Component, Config } from "@tarojs/taro";
+import { Provider } from "@tarojs/redux";
 import dva from "./utils/dva";
-import models from "./models"
+import models from "./models";
 
-import Index from './pages/index'
+import Index from "./pages/index";
 
-import './app.less'
-import "./components/styles/color.less"
+import "./app.less";
+import "./components/styles/color.less";
 
 const dvaApp = dva.createApp({
   initState: {},
-  models: models,
-})
+  models: models
+});
 
-const store = dvaApp.getStore()
+const store = dvaApp.getStore();
 
 // 如果需要在 h5 环境中开启 React Devtools
 // 取消以下注释：
@@ -23,7 +23,6 @@ const store = dvaApp.getStore()
 // }
 
 class App extends Component {
-
   /**
    * 指定config的类型声明为: Taro.Config
    *
@@ -33,36 +32,48 @@ class App extends Component {
    */
   config: Config = {
     pages: [
-      'pages/login/index',
+      "pages/home/index",
+      "pages/login/index",
       "pages/register/index",
-      'pages/home/index',
-      'pages/index/index'
+      "pages/index/index"
     ],
     window: {
-      backgroundTextStyle: 'light',
-      navigationBarBackgroundColor: '#fff',
-      navigationBarTitleText: 'WeChat',
-      navigationBarTextStyle: 'black'
+      backgroundTextStyle: "light",
+      navigationBarBackgroundColor: "#fff",
+      navigationBarTitleText: "WeChat",
+      navigationBarTextStyle: "black"
+    },
+    tabBar: {
+      list: [
+        {
+          pagePath: "pages/home/index",
+          text: "首页"
+        },
+        {
+          pagePath: "pages/index/index",
+          text: "index"
+        }
+      ]
     }
-  }
+  };
 
-  componentDidMount () {}
+  componentDidMount() {}
 
-  componentDidShow () {}
+  componentDidShow() {}
 
-  componentDidHide () {}
+  componentDidHide() {}
 
-  componentDidCatchError () {}
+  componentDidCatchError() {}
 
   // 在 App 类中的 render() 函数没有实际作用
   // 请勿修改此函数
-  render () {
+  render() {
     return (
       <Provider store={store}>
         <Index />
       </Provider>
-    )
+    );
   }
 }
 
-Taro.render(<App />, document.getElementById('app'))
+Taro.render(<App />, document.getElementById("app"));
