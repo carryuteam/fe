@@ -1,7 +1,9 @@
 import request from "../utils/request";
 
 const url = {
-  getMaterials: "/api/resource/search"
+  getMaterials: "/api/resource/search",
+  getMaterialDetail: "/api/resource/getdetail",
+  getComment: "/api/resource/comment/get"
 };
 
 export type SortByRange = "price" | "score" | "time";
@@ -31,7 +33,7 @@ export interface MaterailItem {
   formats: string,
 }
 
-export const getMaterials = async (opts?: GetMaterialsOption): Promise<MaterailItem[]> => {
+export const getMaterials = (opts?: GetMaterialsOption): Promise<MaterailItem[]> => {
   opts = opts || {}
   const {
     name,
@@ -68,3 +70,28 @@ export const getMaterials = async (opts?: GetMaterialsOption): Promise<MaterailI
     data: data
   })
 };
+
+export interface MaterailDetailItem extends MaterailItem {
+  picURLs: string[],
+  create_time: string,
+}
+
+export const getMaterialDetail = (id: number): Promise<MaterailDetailItem> => {
+  return request(url.getMaterialDetail, {
+    data: {
+      resid: id
+    }
+  })
+}
+
+export interface GetCommentOpt {
+  openid?: string,
+  resid?: number,
+  id?: number,
+}
+
+export const getComment = (opt?: GetCommentOpt) => {
+  return request(url.getComment, {
+    data: opt
+  })
+}
