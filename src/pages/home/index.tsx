@@ -1,7 +1,6 @@
 import { ComponentClass } from "react";
 import Taro, { Component, Config } from "@tarojs/taro";
-import { View, Text } from "@tarojs/components";
-import { connect } from "@tarojs/redux";
+import { View } from "@tarojs/components";
 import {
   getMaterials,
   SortByRange,
@@ -51,10 +50,6 @@ const sortByRange: { value: SortByRange; label: string }[] = [
   }
 ];
 
-@connect(
-  ({ }) => ({}),
-  dispatch => ({})
-)
 class Home extends Component {
   state: PageState = {
     list: [],
