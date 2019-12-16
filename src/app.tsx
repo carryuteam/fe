@@ -32,8 +32,8 @@ class App extends Component {
    */
   config: Config = {
     pages: [
-      "pages/home/index",
       "pages/login/index",
+      "pages/home/index",
       "pages/register/index",
       "pages/detail/index",
       "pages/index/index"
@@ -44,18 +44,18 @@ class App extends Component {
       navigationBarTitleText: "WeChat",
       navigationBarTextStyle: "black"
     },
-    tabBar: {
-      list: [
-        {
-          pagePath: "pages/home/index",
-          text: "首页"
-        },
-        {
-          pagePath: "pages/index/index",
-          text: "index"
-        }
-      ]
-    }
+    // tabBar: {
+    //   list: [
+    //     {
+    //       pagePath: "pages/home/index",
+    //       text: "首页"
+    //     },
+    //     {
+    //       pagePath: "pages/index/index",
+    //       text: "index"
+    //     }
+    //   ]
+    // }
   };
 
   componentDidMount() {}
