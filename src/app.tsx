@@ -30,13 +30,22 @@ class App extends Component {
    * 对于像 navigationBarTextStyle: 'black' 这样的推导出的类型是 string
    * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
    */
+
+  componentDidMount() {}
+
+  componentDidShow() {}
+
+  componentDidHide() {}
+
+  componentDidCatchError() {}
+
   config: Config = {
     pages: [
       "pages/login/index",
+      "pages/detail/index",
       "pages/home/index",
       "pages/register/index",
-      "pages/detail/index",
-      "pages/index/index"
+      "pages/index/index",
     ],
     window: {
       backgroundTextStyle: "light",
@@ -57,14 +66,6 @@ class App extends Component {
     //   ]
     // }
   };
-
-  componentDidMount() {}
-
-  componentDidShow() {}
-
-  componentDidHide() {}
-
-  componentDidCatchError() {}
 
   // 在 App 类中的 render() 函数没有实际作用
   // 请勿修改此函数
